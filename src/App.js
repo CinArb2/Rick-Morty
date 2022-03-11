@@ -1,23 +1,33 @@
-import logo from './logo.svg';
+
+import { useEffect, useState } from 'react';
 import './App.css';
+import LocationInfo from './components/LocationInfo';
+import ResidentsList from './components/ResidentsList';
+import SearchBox from './components/SearchBox'
+
 
 function App() {
+  const [data, setData] = useState({});
+  const [id, setId] = useState(Math.floor(Math.random()*126))
+
+  const handleForm = (e, formData) => {
+    e.preventDefault()
+    setId(formData)
+  }
+  useEffect(() => {
+    fetch(`https://rickandmortyapi.com/api/location/${id}`)
+      .then(resp => resp.json())
+      .then(data=>setData(data))
+  }, [id])
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <img className="hero" src="./frame.png" alt="" />
+      <SearchBox
+        click={handleForm}
+      />
+      <LocationInfo data={data}/>
+      <ResidentsList data={data}/>
     </div>
   );
 }
