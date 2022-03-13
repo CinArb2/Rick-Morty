@@ -116,7 +116,7 @@ select {
 h2{
   font-weight: bold;
   margin-top: 2rem;
-  border-top: 1px solid white;
+  /* border-top: 1px solid white; */
 }
 
 .description{
@@ -142,11 +142,29 @@ input{
   border-radius: 20px 0 0 20px;
 }
 
-button{
+.form-button{
   border: none;
   background-color: #fef8c2;
   padding: 0.5rem;
   margin-left: 2px;
   cursor: pointer;
   border-radius: 0 20px 20px 0;
+}
+
+.pagination-button{
+  border: none;
+  background-color: #fef8c2;
+  margin-left: 2px;
+  cursor: pointer;
+  border-radius: 50%;
+  font-size: 2rem;
+  padding-inline: 1rem;
+}
+
+.Pagination-residentlist{
+  margin-block: 2rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
 }

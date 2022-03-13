@@ -1,13 +1,14 @@
 import React from 'react'
 
-const LocationInfo = ({data}) => {
+const LocationInfo = ({ data }) => {
+  
   return (
     <div className="wrapper blue-700">
       <ul className="location-info">
-        <li> <span>Name:</span>  {data.name}</li>
-        <li><span>Tipo:</span> {data.type}</li>
-        <li><span>Dimension:</span> {data.dimension}</li>
-        <li><span>Poblacion:</span> {data.residents?.length}</li>
+        <li> <span>Name:</span>  {data ? data.name : 'Not found'}</li>
+        <li><span>Tipo:</span> {data ? data.type : 'Not found'}</li>
+        <li><span>Dimension:</span> {data ? data.dimension : 'Not found'}</li>
+        <li><span>Poblacion:</span> {data ? data.residents?.length : 'Not found'}</li>
       </ul>
     </div>
   )
