@@ -1,5 +1,5 @@
 
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import Pagination from './Pagination'
 import ResidentInfo from './ResidentInfo'
 
